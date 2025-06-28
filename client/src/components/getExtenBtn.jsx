@@ -1,0 +1,69 @@
+import { useEffect, useState } from "react";
+
+function GetExtenBtn() {
+  const [browser, setBrowser] = useState(6); // Default to "Unknown Browser"
+  const [spin, setSpin] = useState(false);
+
+  useEffect(() => {
+    const detectBrowser = () => {
+      const userAgent = navigator.userAgent;
+
+      if (userAgent.includes("Edg/")) return 0;
+      if (userAgent.includes("OPR") || userAgent.includes("Opera")) return 1;
+      if (userAgent.includes("Chrome")) return 2;
+      if (userAgent.includes("Safari")) return 3;
+      if (userAgent.includes("Firefox")) return 4;
+      if (userAgent.includes("MSIE") || userAgent.includes("Trident/"))
+        return 5;
+
+      return 6;
+    };
+
+    setBrowser(detectBrowser());
+  }, []);
+
+  const browserNames = [
+    { name: "Edge", icon: "edge" },
+    { name: "Opera", icon: "opera" },
+    { name: "Chrome", icon: "chrome" },
+    { name: "Safari", icon: "safari" },
+    { name: "Firefox", icon: "firefox" },
+    { name: "Internet Explorer", icon: "ie" },
+    { name: "Unknown Browser", icon: "unknown" },
+  ];
+
+  const browserIcons = [
+    "https://upload.wikimedia.org/wikipedia/commons/7/7e/Microsoft_Edge_logo_%282019%29.png",
+    "https://images.icon-icons.com/2552/PNG/512/opera_browser_logo_icon_152972.png",
+    "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/Google_Chrome_icon_%28February_2022%29.svg/2048px-Google_Chrome_icon_%28February_2022%29.svg.png",
+    "https://upload.wikimedia.org/wikipedia/commons/thumb/5/52/Safari_browser_logo.svg/2057px-Safari_browser_logo.svg.png",
+    "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a0/Firefox_logo%2C_2019.svg/1200px-Firefox_logo%2C_2019.svg.png",
+    "https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/Internet_Explorer_10%2B11_logo.svg/2085px-Internet_Explorer_10%2B11_logo.svg.png",
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTp7hARjRLHiURBxleWuDNKvtuvHf7KW13ZPA&s",
+  ];
+
+  const handleClick = () => {
+    setSpin(true);
+    setTimeout(() => setSpin(false), 2000); // stop spin after 2 seconds
+  };
+
+  return (
+    <div className="browser-detector flex flex-col items-center justify-center h-screen">
+      <button
+        onClick={handleClick}
+        className="flex flex-row justify-center items-center w-auto px-8 h-12 border border-[#380c9c] bg-white shadow-md rounded-md text-lg gap-3"
+      >
+        <img
+          src={browserIcons[browser]}
+          alt={browserNames[browser].icon}
+          className={`w-7 h-7 ${spin ? "animate-spin-once" : ""}`}
+        />
+        <div>Get {browserNames[browser].name} Extension</div>
+        <div className="text-sm text-blue-800">|</div>
+        <div>It's free</div>
+      </button>
+    </div>
+  );
+}
+
+export default GetExtenBtn;
