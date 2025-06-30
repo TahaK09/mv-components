@@ -3,6 +3,8 @@ import GetExtenBtn from "./components/getExtenBtn.jsx";
 import FeaturesSection from "./components/featuresSection.jsx";
 import Testimonials from "./components/testimonialSection.jsx";
 import MoreSection from "./components/moreSection.jsx";
+import Footer from "./components/footer.jsx";
+import ContactUs from "./components/contactUs.jsx";
 
 function App() {
   return (
@@ -10,7 +12,9 @@ function App() {
       {/* <GetExtenBtn /> */}
       {/* <FeaturesSection /> */}
       {/* <Testimonials /> */}
-      <MoreSection />
+      {/* <MoreSection /> */}
+      {/* <Footer /> */}
+      <ContactUs />
     </div>
   );
 }
