@@ -5,6 +5,8 @@ import Testimonials from "./components/testimonialSection.jsx";
 import MoreSection from "./components/moreSection.jsx";
 import Footer from "./components/footer.jsx";
 import ContactUs from "./components/contactUs.jsx";
+import Careers from "./components/careers.jsx";
+import FAQs from "./components/faqs.jsx";
 
 function App() {
   return (
@@ -14,7 +16,9 @@ function App() {
       {/* <Testimonials /> */}
       {/* <MoreSection /> */}
       {/* <Footer /> */}
-      <ContactUs />
+      {/* <ContactUs /> */}
+      {/* <Careers /> */}
+      <FAQs />
     </div>
   );
 }
