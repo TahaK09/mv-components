@@ -2,6 +2,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
 @keyframes spinOnce {
   from {
     transform: rotate(0deg);
@@ -13,4 +14,7 @@
 
 .spin-once:hover {
   animation: spinOnce 0.4s linear 1;
+}
+body {
+  font-family: "Manrope", sans-serif;
 }
