@@ -1,5 +1,6 @@
 import { FaFacebookF, FaTwitter, FaInstagram } from "react-icons/fa";
-import contactIllustration from "../assets/contact_illustration.jpg";
+// import { CiLocation } from "react-icons/ci";
+import contactIllustration from "../assets/about-us.webp";
 
 function ContactUs() {
   return (
@@ -29,9 +30,20 @@ function ContactUs() {
                 placeholder="Your Email"
                 className="w-full rounded-lg bg-gray-100 px-4 py-3 outline-none focus:ring-2 focus:ring-purple-400"
               />
+              <select className="w-full rounded-lg bg-gray-100 px-4 py-3 outline-none focus:ring-2 focus:ring-purple-400">
+                <option disabled selected>
+                  Subject
+                </option>
+                <option>General</option>
+                <option>Feedback</option>
+                <option>Support</option>
+                <option>Bugs</option>
+                <option>Enchantments</option>
+                <option>Other</option>
+              </select>
               <textarea
                 rows="4"
-                placeholder="Type something if you want..."
+                placeholder="Write your message here..."
                 className="w-full rounded-lg bg-gray-100 px-4 py-3 outline-none focus:ring-2 focus:ring-purple-400"
               />
               <button
@@ -44,13 +56,16 @@ function ContactUs() {
           </div>
 
           {/* Right: Contact Info */}
-          <div className=" flex flex-col items-center text-center md:text-left md:items-start justify-center">
+          {/* <div className=" flex flex-col items-center text-center md:text-left md:items-start justify-center">
             <img
               src={contactIllustration}
               alt="Contact Illustration"
-              className="w-80 h-80 mb-4"
+              className="w-80 h-auto rounded-2xl mb-4"
             />
-            <p className="text-gray-600 mb-2">131-2, Michigan, USA</p>
+            <p className="text-gray-600 mb-2">
+             
+              131-2, Michigan, USA
+            </p>
             <div className="flex space-x-4 mt-4 text-violet-600">
               <a href="#">
                 <FaFacebookF size={20} />
@@ -62,7 +77,7 @@ function ContactUs() {
                 <FaInstagram size={20} />
               </a>
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
     </>
