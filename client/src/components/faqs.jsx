@@ -72,11 +72,11 @@ function FAQs() {
   };
 
   return (
-    <div className="w-6xl mx-auto my-10 p-8">
-      <h1 className="text-center font-bold text-5xl text-[#444546] mb-6 tracking-wide">
+    <div className="w-5xl mx-auto my-20 p-8">
+      <h1 className="text-center font-bold text-5xl text-[#444546] mb-5 tracking-wide">
         Frequently asked Questions
       </h1>
-      <p className="text-center mb-20 text-xl text-violet-400">
+      <p className="text-center mb-16 text-lg font-bold bg-gradient-to-r from-[#3a0ca3] via-[#7209b7] to-[#f72585] text-transparent bg-clip-text  opacity-80">
         The most common questions about how your MeaVana works and what it can
         do for you
       </p>
@@ -90,7 +90,7 @@ function FAQs() {
           >
             <button
               onClick={() => handleToggle(idx)}
-              className="w-full bg-transparent border-none outline-none text-left px-5 py-4 text-lg font-semibold text-[#2a3a4b] cursor-pointer flex items-center justify-between"
+              className="w-full bg-transparent border-none outline-none text-left px-5 py-4 text-base font-semibold text-[#2a3a4b] cursor-pointer flex items-center justify-between"
               aria-expanded={openIndex === idx}
             >
               {faq.question}

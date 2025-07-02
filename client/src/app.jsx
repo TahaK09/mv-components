@@ -7,6 +7,7 @@ import Footer from "./components/footer.jsx";
 import ContactUs from "./components/contactUs.jsx";
 import Careers from "./components/careers.jsx";
 import FAQs from "./components/faqs.jsx";
+import BlogCard from "./components/blogCard.jsx";
 
 function App() {
   return (
@@ -18,7 +19,8 @@ function App() {
       {/* <Footer /> */}
       {/* <ContactUs /> */}
       {/* <Careers /> */}
-      <FAQs />
+      {/* <FAQs /> */}
+      <BlogCard />
     </div>
   );
 }
