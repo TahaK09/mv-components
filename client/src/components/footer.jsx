@@ -10,7 +10,7 @@ import {
 
 export default function Footer() {
   return (
-    <footer className="absolute bottom-0 bg-white pt-12 pb-20 text-gray-600 border-t border-[#6952dc66] w-full">
+    <footer className="bg-white pt-12 pb-20 text-gray-600 border-t border-[#6952dc66] w-full mt-20">
       {/* Grid Content */}
       <div className="max-w-6xl mx-auto grid grid-cols-2 md:grid-cols-5 gap-8 text-sm px-6 text-gray-700">
         <div>

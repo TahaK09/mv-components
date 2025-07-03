@@ -48,21 +48,19 @@ function GetExtenBtn() {
   };
 
   return (
-    <div className="browser-detector flex flex-col items-center justify-center h-screen">
-      <button
-        onClick={handleClick}
-        className="flex flex-row justify-center items-center w-auto px-8 h-12 border border-[#380c9c] bg-white shadow-md rounded-md text-lg gap-3"
-      >
-        <img
-          src={browserIcons[browser]}
-          alt={browserNames[browser].icon}
-          className={`w-7 h-7 ${spin ? "animate-spin-once" : ""}`}
-        />
-        <div>Get {browserNames[browser].name} Extension</div>
-        <div className="text-sm text-blue-800">|</div>
-        <div>It's free</div>
-      </button>
-    </div>
+    <button
+      onClick={handleClick}
+      className="flex flex-row justify-center items-center w-auto px-6 py-2 border border-[#380c9c] rounded-lg text-md gap-3"
+    >
+      <img
+        src={browserIcons[browser]}
+        alt={browserNames[browser].icon}
+        className={`w-7 h-7 ${spin ? "animate-spin-once" : ""}`}
+      />
+      <div>Get {browserNames[browser].name} Extension</div>
+      <div className="text-sm text-blue-800">|</div>
+      <div>It's free</div>
+    </button>
   );
 }
 

@@ -6,7 +6,7 @@ import mvschools from "../assets/meavana_schools.jpg";
 function MoreSection() {
   return (
     <>
-      <section className="px-6 py-12 bg-white">
+      <section className="px-6 py-16 bg-white">
         <h2 className="text-4xl font-extrabold text-[#282828] text-center my-20">
           More from MeaVana
         </h2>

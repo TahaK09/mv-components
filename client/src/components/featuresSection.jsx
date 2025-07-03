@@ -5,7 +5,7 @@ import wallpapers from "../assets/wallpapers.png";
 function FeaturesSection() {
   return (
     <>
-      <section className="flex flex-col md:flex-row items-center justify-between px-6 md:px-20 py-12 mt-60">
+      <section className="flex flex-col md:flex-row items-center justify-between px-6 md:px-20 py-12 mt-10">
         {/* Text content */}
         <div className="max-w-72 md:w-1/2 text-center md:text-left mb-10 md:mb-0">
           <h1 className="text-5xl font-bold text-gray-900 leading-tight">
