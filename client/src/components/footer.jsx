@@ -7,8 +7,11 @@ import {
   FaPinterest,
   FaMedium,
 } from "react-icons/fa";
+import { useAppContext } from "../Context/AppContext";
 
 export default function Footer() {
+  const { navigate } = useAppContext();
+
   return (
     <footer className="bg-white pt-12 pb-20 text-gray-600 border-t border-[#6952dc66] w-full mt-20">
       {/* Grid Content */}
@@ -40,7 +43,15 @@ export default function Footer() {
               <a href="#">Blogs</a>
             </li>
             <li>
-              <a href="#">Contact</a>
+              <a
+                onClick={() => {
+                  scrollTo(0, 0);
+                  navigate("/contact");
+                }}
+                className="cursor-pointer"
+              >
+                Contact
+              </a>
             </li>
 
             <li>
@@ -55,7 +66,15 @@ export default function Footer() {
               <a href="#">Tour</a>
             </li>
             <li>
-              <a href="#">FAQs</a>
+              <a
+                onClick={() => {
+                  scrollTo(0, 0);
+                  navigate("/faqs");
+                }}
+                className="cursor-pointer"
+              >
+                FAQs
+              </a>
             </li>
           </ul>
         </div>

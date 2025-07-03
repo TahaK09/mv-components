@@ -1,9 +1,11 @@
 import React, { useRef } from "react";
 import MVlogo from "../assets/meavana.svg";
+import { useAppContext } from "../Context/AppContext";
 import GetExtenBtn from "./getExtenBtn.jsx";
 
 const Navbar = () => {
   const menuRef = useRef(null);
+  const { navigate } = useAppContext();
 
   const handleOpenMenu = () => {
     if (menuRef.current) {
@@ -20,8 +22,14 @@ const Navbar = () => {
   };
 
   return (
-    <header className="fixed top-0 flex items-center justify-between px-40 py-3 md:py-4 mx-auto w-full z-1000 transition-all duration-300 bg-transparent backdrop-blur-lg backdrop-saturate-150  ">
-      <a href="#" className="flex flex-row gap-2 items-center">
+    <header className="fixed  top-0 flex items-center justify-between px-40 py-3 md:py-4 mx-auto w-full z-1000 transition-all duration-300 bg-transparent backdrop-blur-lg backdrop-saturate-150 cursor-pointer">
+      <a
+        onClick={() => {
+          navigate("/");
+          scrollTo(0, 0);
+        }}
+        className="flex flex-row gap-2 items-center"
+      >
         <img src={MVlogo} alt="Logo" className="w-10 h-auto" />
         <div class="__className_af5235 text-3xl font-bold text-gray-900">
           MeaVana
@@ -31,19 +39,49 @@ const Navbar = () => {
         ref={menuRef}
         className="max-md:absolute max-md:top-0 max-md:left-0 max-md:overflow-hidden items-center justify-center max-md:h-full max-md:w-0 transition-[width] flex-col md:flex-row flex gap-8 text-gray-900 text-sm font-normal"
       >
-        <a className="hover:text-indigo-600" href="#">
+        <a
+          className="hover:text-indigo-600 cursor-pointer"
+          onClick={() => {
+            scrollTo(0, 0);
+            navigate("/");
+          }}
+        >
           Home
         </a>
-        <a className="hover:text-indigo-600" href="#">
+        <a
+          className="hover:text-indigo-600 cursor-pointer"
+          onClick={() => {
+            scrollTo(0, 0);
+            navigate("/blogs");
+          }}
+        >
           Blogs
         </a>
-        <a className="hover:text-indigo-600" href="#">
+        <a
+          className="hover:text-indigo-600 cursor-pointer"
+          onClick={() => {
+            scrollTo(0, 0);
+            navigate("/contact");
+          }}
+        >
           Contact Us
         </a>
-        <a className="hover:text-indigo-600" href="#">
+        <a
+          className="hover:text-indigo-600 cursor-pointer"
+          onClick={() => {
+            scrollTo(0, 0);
+            navigate("/about");
+          }}
+        >
           About Us
         </a>
-        <a className="hover:text-indigo-600" href="#">
+        <a
+          className="hover:text-indigo-600 cursor-pointer"
+          onClick={() => {
+            scrollTo(0, 0);
+            navigate("/meavana-schools");
+          }}
+        >
           Schools
         </a>
         <button

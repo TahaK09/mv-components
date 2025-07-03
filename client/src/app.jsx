@@ -1,8 +1,10 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
-import Home from "./Home/index.jsx";
+import Home from "./Home";
 import Footer from "./components/footer.jsx";
 import Navbar from "./components/navbar.jsx";
+import Contact from "./Contact";
+import Faqs from "./FAQs";
 
 function App() {
   return (
@@ -11,6 +13,8 @@ function App() {
       <div className="flex flex-col items-center justify-center h-auto">
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/faqs" element={<Faqs />} />
           {/* <Route path="/products" element={<AllProducts />} />
           <Route path="/products/:category" element={<ProductCategory />} />
           <Route path="/products/:category/:id" element={<ProductDetails />} />
