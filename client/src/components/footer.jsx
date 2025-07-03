@@ -7,7 +7,7 @@ import {
   FaPinterest,
   FaMedium,
 } from "react-icons/fa";
-import { useAppContext } from "../Context/AppContext";
+import { useAppContext } from "../Context/AppContext.jsx";
 
 export default function Footer() {
   const { navigate } = useAppContext();

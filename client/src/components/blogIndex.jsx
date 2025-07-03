@@ -1,5 +1,5 @@
 import React from "react";
-import BlogCard from "./blogCard";
+import BlogCard from "./blogCard.jsx";
 
 // Dummy blog data for demonstration
 const blogs = [
