@@ -3,7 +3,7 @@ import TimeSvg from "../assets/icons8-time.svg";
 
 function BlogCard({ Title, Description, Time, Image }) {
   return (
-    <div className="cursor-pointer mt-20 max-w-84 rounded-xl overflow-hidden shadow-lg bg-white transition-shadow duration-200 hover:shadow-2xl">
+    <div className="cursor-pointer max-w-84 rounded-xl overflow-hidden shadow-lg bg-white transition-shadow duration-200 hover:shadow-2xl">
       <div className="overflow-hidden max-h-[160px]">
         <img
           src={Image}
@@ -20,7 +20,7 @@ function BlogCard({ Title, Description, Time, Image }) {
         </p>
         <div className="mt-3 text-[#363636] text-sm flex items-center gap-1.5">
           <img src={TimeSvg} alt="Time" className="w-4 h-4 rotate-315" />
-          <span>{Time}</span>
+          <span>{Time} read</span>
         </div>
       </div>
     </div>

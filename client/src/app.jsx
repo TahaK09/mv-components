@@ -8,6 +8,7 @@ import ContactUs from "./components/contactUs.jsx";
 import Careers from "./components/careers.jsx";
 import FAQs from "./components/faqs.jsx";
 import BlogCard from "./components/blogCard.jsx";
+import BlogIndex from "./components/blogIndex.jsx";
 
 function App() {
   return (
@@ -20,7 +21,8 @@ function App() {
       {/* <ContactUs /> */}
       {/* <Careers /> */}
       {/* <FAQs /> */}
-      <BlogCard />
+      {/* <BlogCard /> */}
+      <BlogIndex />
     </div>
   );
 }
