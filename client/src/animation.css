@@ -1,0 +1,49 @@
+.floating-image-1 {
+  animation: floatUpDown1 2s ease-in-out infinite;
+}
+
+@keyframes floatUpDown1 {
+  0% {
+    top: 120px;
+  }
+  50% {
+    top: 130px;
+  }
+  100% {
+    top: 120px;
+  }
+}
+
+.floating-image-2 {
+  animation: floatUpDown2 2s ease-in-out infinite;
+  animation-delay: 0.5s;
+}
+
+@keyframes floatUpDown2 {
+  0% {
+    top: 160px;
+  }
+  50% {
+    top: 170px;
+  }
+  100% {
+    top: 160px;
+  }
+}
+
+.floating-image-3 {
+  animation: floatUpDown3 2s ease-in-out infinite;
+  animation-delay: 0.5s;
+}
+
+@keyframes floatUpDown3 {
+  0% {
+    top: 180px;
+  }
+  50% {
+    top: 190px;
+  }
+  100% {
+    top: 180px;
+  }
+}

@@ -8,6 +8,7 @@ import Faqs from "./FAQs/index.jsx";
 import Blogs from "./Blogs/index.jsx";
 import Careers from "./components/careers.jsx";
 import About from "./About/index.jsx";
+import School from "./Schools/index.jsx";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
           <Route path="/blogs" element={<Blogs />} />
           <Route path="/careers" element={<Careers />} />
           <Route path="/about" element={<About />} />
+          <Route path="/meavana-schools" element={<School />} />
           {/* <Route path="/products" element={<AllProducts />} />
           <Route path="/products/:category" element={<ProductCategory />} />
           <Route path="/products/:category/:id" element={<ProductDetails />} />
