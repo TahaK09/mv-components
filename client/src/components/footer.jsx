@@ -37,10 +37,26 @@ export default function Footer() {
           <h4 className="font-semibold mb-2">CONNECT</h4>
           <ul className="space-y-1">
             <li>
-              <a href="#">Careers</a>
+              <a
+                onClick={() => {
+                  scrollTo(0, 0);
+                  navigate("/careers");
+                }}
+                className="cursor-pointer"
+              >
+                Careers
+              </a>
             </li>
             <li>
-              <a href="#">Blogs</a>
+              <a
+                onClick={() => {
+                  scrollTo(0, 0);
+                  navigate("/blogs");
+                }}
+                className="cursor-pointer"
+              >
+                Blogs
+              </a>
             </li>
             <li>
               <a

@@ -24,7 +24,13 @@ function MoreSection() {
               className="w-64 h-auto mt-3.5 shadow-2xl rounded-lg"
             />
           </div>
-          <div className="bg-violet-100 flex flex-col justify-center items-center rounded-lg  py-7 px-16 shadow-lg cursor-pointer">
+          <div
+            onClick={() =>
+              (window.location.href =
+                "https://mv-rajvadeghars-projects.vercel.app/")
+            }
+            className="bg-violet-100 flex flex-col justify-center items-center rounded-lg  py-7 px-16 shadow-lg cursor-pointer"
+          >
             <h3 className="mb-1 text-xl font-bold text-violet-700">
               MeaVana Plus
             </h3>
