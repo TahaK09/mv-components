@@ -1,8 +1,19 @@
 import { useEffect, useState } from "react";
+import { useAppContext } from "../Context/AppContext.jsx";
 
 function GetExtenBtn() {
   const [browser, setBrowser] = useState(6); // Default to "Unknown Browser"
   const [spin, setSpin] = useState(false);
+  const { path } = useAppContext();
+  const [colorHeaderText, setColorHeaderText] = useState("text-blue-800");
+
+  useEffect(() => {
+    if (path === "/meavana-schools") {
+      setColorHeaderText("text-white");
+    } else {
+      setColorHeaderText("text-blue-800");
+    }
+  }, [path]);
 
   useEffect(() => {
     const detectBrowser = () => {
@@ -48,8 +59,9 @@ function GetExtenBtn() {
   };
 
   return (
-    <button
-      onClick={handleClick}
+    <a
+      href="https://chromewebstore.google.com/detail/meavana-productivity-moti/kgbcoelgfffkmkpfnldemdinmcbpjlaa"
+      target="_blank"
       className="flex flex-row justify-center items-center w-auto px-6 py-2 border border-[#380c9c] rounded-lg text-md gap-3"
     >
       <img
@@ -57,10 +69,12 @@ function GetExtenBtn() {
         alt={browserNames[browser].icon}
         className={`w-7 h-7 ${spin ? "animate-spin-once" : ""}`}
       />
-      <div>Get {browserNames[browser].name} Extension</div>
-      <div className="text-sm text-blue-800">|</div>
-      <div>It's free</div>
-    </button>
+      <div className={`${colorHeaderText}`}>
+        Get {browserNames[browser].name} Extension
+      </div>
+      <div className={`${colorHeaderText}`}>|</div>
+      <div className={`${colorHeaderText}`}>It's free</div>
+    </a>
   );
 }
 

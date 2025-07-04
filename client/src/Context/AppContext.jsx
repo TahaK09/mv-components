@@ -1,5 +1,6 @@
 import { createContext, useContext, useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 
 export const AppContext = createContext();
 
@@ -7,6 +8,12 @@ export const AppContextProvider = ({ children }) => {
   const navigate = useNavigate();
   //   const [user, setUser] = useState(null);
   const [browser, setBrowser] = useState(null);
+  const [path, setPath] = useState(null);
+  const location = useLocation();
+
+  useEffect(() => {
+    setPath(location.pathname);
+  }, [location.pathname]);
 
   const checkBrowser = () => {
     const userAgent = navigator.userAgent;
@@ -29,6 +36,8 @@ export const AppContextProvider = ({ children }) => {
   const value = {
     navigate,
     browser,
+    setPath,
+    path: location.pathname,
   };
 
   return <AppContext.Provider value={value}>{children}</AppContext.Provider>;

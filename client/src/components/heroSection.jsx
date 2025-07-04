@@ -30,7 +30,8 @@ function HeroSection() {
               We're partnering with some of the world's top schools!
             </div>
             <div className="w-full mt-5">
-              <button className="px-8 py-3 text-lg font-semibold bg-[#541ed2] text-white rounded-full shadow-md hover:bg-[#7209b7] transition-colors duration-300">
+              {/*Button should Popup when clicked */}
+              <button className="px-8 py-3 text-lg font-semibold bg-gradient-to-r from-[#7b28f0] to-[#2b5de5] text-white rounded-full shadow-md hover:bg-[#7209b7] transition-colors duration-300">
                 + Add to {browser}
                 <span className="mx-2 text-base font-normal">it's free</span>
               </button>
@@ -98,6 +99,14 @@ function HeroSection() {
               {imgIndex === 0 ? <StarRating /> : <Downloads />}
             </div>
           </div>
+        </div>
+      </div>
+      <div className="bg-gradient-to-b from-[#E6EFFF] to-[#ffffff] h-80 w-full flex justify-center items-start">
+        <div className="w-4xl text-6xl font-bold text-gray-600">
+          MeaVana is working towards building the world's{" "}
+          <span className="text-violet-500">
+            most customizable personal dashboard.
+          </span>
         </div>
       </div>
     </>

@@ -21,13 +21,13 @@
 
 @keyframes floatUpDown2 {
   0% {
-    top: 160px;
+    top: 120px;
   }
   50% {
-    top: 170px;
+    top: 130px;
   }
   100% {
-    top: 160px;
+    top: 120px;
   }
 }
 

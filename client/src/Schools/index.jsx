@@ -25,6 +25,7 @@ function School() {
         alt="Cloud"
         className="absolute right-40 w-50 h-auto floating-image-3 select-none"
       />
+      {/* Cloud should move/flow rather */}
       <img
         src={SchoolImage}
         alt="school"
@@ -42,7 +43,8 @@ function School() {
           collaborative, and successful school community.
         </div>
         <div className="mt-20">
-          <button className="px-7 py-2.5 bg-violet-700 text-xl text-white rounded-full">
+          {/* add popup transition to this button */}
+          <button className="px-8 py-2.5 bg-gradient-to-l from-[#5f23eb] to-[#a041f4] text-lg font-semibold text-white rounded-full hover:scale-105 transition-all duration-400">
             Sign Up Today
           </button>
         </div>
