@@ -5,6 +5,11 @@ function School() {
     "https://www.pngkey.com/png/full/1-18114_vector-clouds-png-cloud-png-clip-art.png";
   const SchoolImage =
     "https://nextadmit.com/assets/images/school-with-path.webp";
+
+  const collabImages = [
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTaOPEnOnDOaixbIumLcOz1aAUdfKRh5cPLgw&s",
+    "https://evolvingweb.com/sites/default/files/2024-03/Princeton%20University%20Logo%20Black.png",
+  ];
   return (
     <>
       {/* <div className="flex flex-col items-center justify-center w-full h-screen bg-gradient-to-b from-[#F5F7FF] via-[#fffbee] to-[#E6EFFF]"></div> */}
@@ -18,12 +23,12 @@ function School() {
       <img
         src={Cloud}
         alt="Cloud"
-        className="absolute top-40 w-60 h-auto floating-image-2 select-none"
+        className="absolute top-[180px] w-60 h-auto floating-image-2 select-none"
       />
       <img
         src={Cloud}
         alt="Cloud"
-        className="absolute right-40 w-50 h-auto floating-image-3 select-none"
+        className="absolute top-30 right-40 w-50 h-auto floating-image-3 select-none"
       />
       {/* Cloud should move/flow rather */}
       <img

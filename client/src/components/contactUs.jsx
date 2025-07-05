@@ -5,7 +5,7 @@ import contactIllustration from "../assets/about-us.webp";
 function ContactUs() {
   return (
     <>
-      <div className="min-h-screen flex items-center justify-center">
+      <div className="min-h-screen flex items-center justify-center bg-[url('https://images.pexels.com/photos/16809643/pexels-photo-16809643.jpeg')] bg-cover bg-center h-screen w-full">
         <div className="w-full max-w-5xl bg-white rounded-2xl p-10 md:p-16 flex flex-col md:flex-row gap-16 shadow-lg border border-gray-100 relative">
           {/* Left: Contact Form */}
           <div className="flex-1">

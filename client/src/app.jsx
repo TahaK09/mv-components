@@ -23,12 +23,6 @@ function App() {
           <Route path="/careers" element={<Careers />} />
           <Route path="/about" element={<About />} />
           <Route path="/meavana-schools" element={<School />} />
-          {/* <Route path="/products" element={<AllProducts />} />
-          <Route path="/products/:category" element={<ProductCategory />} />
-          <Route path="/products/:category/:id" element={<ProductDetails />} />
-          <Route path="/cart" element={<Cart />} />
-          <Route path="/add-address" element={<AddAddress />} />
-          <Route path="/my-orders" element={<MyOrders />} /> */}
         </Routes>
       </div>
       <Footer />

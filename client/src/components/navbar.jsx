@@ -14,6 +14,8 @@ const Navbar = () => {
     if (path === "/meavana-schools") {
       setColorHeaderText("text-white");
       setNavBg(" ");
+    } else if (path === "/contact") {
+      setNavBg(" ");
     } else {
       setNavBg("backdrop-blur-lg backdrop-saturate-150");
       setColorHeaderText("text-gray");

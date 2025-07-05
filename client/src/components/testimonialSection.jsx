@@ -153,7 +153,12 @@ export default function Testimonials() {
     newTestimonials.forEach((testimonial, index) => {
       cols[index % 3].push(testimonial);
     });
-    setColumns(cols);
+
+    // Check if it's actually different before setting state
+    setColumns((prev) => {
+      const isSame = JSON.stringify(prev) === JSON.stringify(cols);
+      return isSame ? prev : cols;
+    });
   }, [newTestimonials]);
 
   const handleSeeMore = () => {
