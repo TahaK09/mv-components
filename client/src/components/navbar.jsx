@@ -11,30 +11,14 @@ const Navbar = () => {
   // const [navBg, setNavBg] = useState("backdrop-blur-lg backdrop-saturate-150");
   const [navBg, setNavBg] = useState("backdrop-blur-lg backdrop-saturate-150");
 
-  const [isVisible, setIsVisible] = useState(false);
-
-  useEffect(() => {
-    const onScroll = () => {
-      // Show element when scrollY is more than screen height
-      if (window.scrollY > window.innerHeight) {
-        setIsVisible(true);
-      } else {
-        setIsVisible(false);
-      }
-    };
-
-    window.addEventListener("scroll", onScroll);
-
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
   useEffect(() => {
     if (path === "/meavana-schools") {
       setColorHeaderText("text-white");
       setNavBg(" ");
-    } else if (path === "/contact") {
+    } else if (path === "/contact" || path === "/about") {
       setNavBg(" ");
     } else {
-      // setNavBg("backdrop-blur-lg backdrop-saturate-150 ");
+      // setNavBg("backdrop-blur-lg backdrop-saturate-150");
       setNavBg("backdrop-blur-lg backdrop-saturate-150");
       setColorHeaderText("text-gray");
     }
@@ -49,39 +33,37 @@ const Navbar = () => {
   ];
 
   return (
-    isVisible && (
-      <header
-        className={`fixed top-0 flex items-center justify-between px-40 py-3 md:py-4 mx-auto w-full z-1000 duration-300 bg-transparent transition-transform ${navBg} cursor-pointer`}
+    <header
+      className={`fixed top-0 flex items-center justify-between px-40 py-3 md:py-4 mx-auto w-full z-1000 duration-300 bg-transparent transition-transform ${navBg} cursor-pointer`}
+    >
+      <a
+        onClick={() => {
+          navigate("/");
+          scrollTo(0, 0);
+        }}
+        className="flex flex-row gap-2 items-center"
       >
-        <a
-          onClick={() => {
-            navigate("/");
-            scrollTo(0, 0);
-          }}
-          className="flex flex-row gap-2 items-center"
+        <img src={MVlogo} alt="Logo" className="w-10 h-auto" />
+        <div
+          className={`__className_af5235 text-3xl font-bold ${colorHeaderText}`}
         >
-          <img src={MVlogo} alt="Logo" className="w-10 h-auto" />
-          <div
-            className={`__className_af5235 text-3xl font-bold ${colorHeaderText}`}
-          >
-            MeaVana
-          </div>
-        </a>
-        <nav
-          ref={menuRef}
-          className="max-md:absolute max-md:top-0 max-md:left-0 max-md:overflow-hidden items-center justify-center max-md:h-full max-md:w-0 transition-[width] flex-col md:flex-row flex gap-8 text-gray-900 text-base font-normal"
-        >
-          {navLink.map((item, index) => (
-            <div key={index} className={`inline ${colorHeaderText}`}>
-              <NavLink to={item.link}>{item.name}</NavLink>
-            </div>
-          ))}
-        </nav>
-        <div className="flex items-center space-x-4">
-          <GetExtenBtn />
+          MeaVana
         </div>
-      </header>
-    )
+      </a>
+      <nav
+        ref={menuRef}
+        className="max-md:absolute max-md:top-0 max-md:left-0 max-md:overflow-hidden items-center justify-center max-md:h-full max-md:w-0 transition-[width] flex-col md:flex-row flex gap-8 text-gray-900 text-base font-normal"
+      >
+        {navLink.map((item, index) => (
+          <div key={index} className={`inline ${colorHeaderText}`}>
+            <NavLink to={item.link}>{item.name}</NavLink>
+          </div>
+        ))}
+      </nav>
+      <div className="flex items-center space-x-4">
+        <GetExtenBtn />
+      </div>
+    </header>
   );
 };
 
