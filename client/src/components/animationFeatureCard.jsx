@@ -32,7 +32,7 @@ function AnimationFeatureCard() {
           <img
             src={img3}
             alt="Image 3"
-            className="w-60 h-60 absolute top-24 left-20 z-10"
+            className="w-60 h-60 absolute top-24 left-20 z-10 transition-all duration-300 opacity-0 transform hover:top-20 hover:opacity-100"
           />
           <img
             src={img4}
