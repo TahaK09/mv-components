@@ -3,6 +3,7 @@ import Testimonials from "../components/testimonialSection.jsx";
 import HeroSection from "../components/heroSection.jsx";
 import FeaturesSection from "../components/featuresSection.jsx";
 import MoreSection from "../components/moreSection.jsx";
+import AnimationFeatureCard1 from "../components/animationFeatureCard1.jsx";
 
 const testimonials = [
   {
@@ -151,7 +152,7 @@ function Home() {
   return (
     <>
       <HeroSection />
-      <FeaturesSection />
+      <AnimationFeatureCard1 />
       <Testimonials
         testimonials={testimonials}
         header={"What the community is saying"}

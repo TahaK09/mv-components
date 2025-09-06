@@ -4,10 +4,10 @@ import img2 from "../assets/sn2.png";
 import img3 from "../assets/sn3.png";
 import img4 from "../assets/sn4.png";
 
-function AnimationFeatureCard() {
+function AnimationFeatureCard1() {
   return (
     <>
-      <div className="w-screen h-screen bg-white flex justify-center items-center gap-10">
+      <div className="bg-white flex justify-center items-center gap-10">
         {/* Left Side Text */}
         <div className="w-96 space-y-4 fade-in-up">
           <div className="font-semibold text-2xl">StickyNotes</div>
@@ -45,4 +45,4 @@ function AnimationFeatureCard() {
   );
 }
 
-export default AnimationFeatureCard;
+export default AnimationFeatureCard1;
