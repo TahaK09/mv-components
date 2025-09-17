@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useAppContext } from "../Context/AppContext";
 import MVlogo from "../assets/meavana.svg";
 import starFull from "../assets/starfull.svg";
+import { PointerHighlight } from "@/components/ui/pointer-highlight";
 
 function HeroSection() {
   const { browser } = useAppContext();
@@ -101,12 +102,15 @@ function HeroSection() {
           </div>
         </div>
       </div>
+      {/* SECTION 2 */}
       <div className="bg-gradient-to-b from-[#E6EFFF] to-[#ffffff] h-80 w-full flex justify-center items-start">
-        <div className="w-4xl text-6xl font-bold text-gray-600">
-          MeaVana is working towards building the world's{" "}
-          <span className="text-violet-500">
-            most customizable personal dashboard.
-          </span>
+        <div className="mx-auto max-w-lg py-20 text-5xl font-bold tracking-tight md:text-4xl text-gray-600">
+          MeaVana is working towards building the world's most{" "}
+          <PointerHighlight>
+            <span className="text-violet-500">
+              customizable personal dashboard.
+            </span>
+          </PointerHighlight>
         </div>
       </div>
     </>

@@ -9,7 +9,7 @@ import Blogs from "./Blogs/index.jsx";
 import Careers from "./components/careers.jsx";
 import About from "./About/index.jsx";
 import School from "./Schools/index.jsx";
-import AnimationFeatureCard from "./components/animationFeatureCard.jsx";
+import AnimationFeatureCard2 from "./components/animationFeatureCard2.jsx";
 
 function App() {
   return (
@@ -24,7 +24,10 @@ function App() {
           <Route path="/careers" element={<Careers />} />
           <Route path="/about" element={<About />} />
           <Route path="/meavana-schools" element={<School />} />
-          <Route path="/featuredAnimation" element={<AnimationFeatureCard />} />
+          <Route
+            path="/featuredAnimation"
+            element={<AnimationFeatureCard2 />}
+          />
         </Routes>
       </div>
       <Footer />
