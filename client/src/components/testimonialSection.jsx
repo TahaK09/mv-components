@@ -1,8 +1,47 @@
 import { useState, useEffect } from "react";
+import { HoverEffect } from "../components/ui/card-hover-effect";
 
 export default function Testimonials({ testimonials, header }) {
   const [testNums, setTestNums] = useState(9);
   const [columns, setColumns] = useState([[], [], []]);
+  const projects = [
+    {
+      title: "Stripe",
+      description:
+        "A technology company that builds economic infrastructure for the internet.",
+      link: "https://stripe.com",
+    },
+    {
+      title: "Netflix",
+      description:
+        "A streaming service that offers a wide variety of award-winning TV shows, movies, anime, documentaries, and more on thousands of internet-connected devices.",
+      link: "https://netflix.com",
+    },
+    {
+      title: "Google",
+      description:
+        "A multinational technology company that specializes in Internet-related services and products.",
+      link: "https://google.com",
+    },
+    {
+      title: "Meta",
+      description:
+        "A technology company that focuses on building products that advance Facebook's mission of bringing the world closer together.",
+      link: "https://meta.com",
+    },
+    {
+      title: "Amazon",
+      description:
+        "A multinational technology company focusing on e-commerce, cloud computing, digital streaming, and artificial intelligence.",
+      link: "https://amazon.com",
+    },
+    {
+      title: "Microsoft",
+      description:
+        "A multinational technology company that develops, manufactures, licenses, supports, and sells computer software, consumer electronics, personal computers, and related services.",
+      link: "https://microsoft.com",
+    },
+  ];
 
   const newTestimonials = testimonials.slice(0, testNums);
 
@@ -29,7 +68,9 @@ export default function Testimonials({ testimonials, header }) {
   }
   return (
     <section className="px-6 py-12 bg-white">
-      <h2 className="text-4xl font-extrabold text-[#282828] text-center my-20">
+      <HoverEffect items={projects} />
+
+      {/* <h2 className="text-4xl font-extrabold text-[#282828] text-center my-20">
         {header}
       </h2>
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto  transition-all duration-700">
@@ -68,7 +109,7 @@ export default function Testimonials({ testimonials, header }) {
         >
           See More
         </button>
-      </div>
+      </div> */}
     </section>
   );
 }
