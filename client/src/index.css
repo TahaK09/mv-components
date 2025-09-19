@@ -1,6 +1,8 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 
+@import url("https://fonts.googleapis.com/css2?family=Asimovian&display=swap");
+
 @custom-variant dark (&:is(.dark *));
 @tailwind base;
 @tailwind components;
@@ -13,6 +15,12 @@
   to {
     transform: rotate(60deg);
   }
+}
+
+.font-asimovian {
+  font-family: "Asimovian", sans-serif !important;
+  font-weight: 400;
+  font-style: normal;
 }
 
 .spin-once:hover {

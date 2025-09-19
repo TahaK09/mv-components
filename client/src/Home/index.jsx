@@ -1,5 +1,6 @@
 import React from "react";
 import Testimonials from "../components/testimonialSection.jsx";
+import Testimonials2 from "../components/testimonialSection2.jsx";
 import HeroSection from "../components/heroSection.jsx";
 import FeaturesSection from "../components/featuresSection.jsx";
 import MoreSection from "../components/moreSection.jsx";
@@ -156,10 +157,11 @@ function Home() {
       <AnimationFeatureCard1 />
       <AnimationFeatureCard2 />
 
-      <Testimonials
+      {/* <Testimonials
         testimonials={testimonials}
         header={"What the community is saying"}
-      />
+      /> */}
+      <Testimonials2 />
 
       <MoreSection />
     </>

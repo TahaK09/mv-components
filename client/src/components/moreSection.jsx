@@ -74,6 +74,7 @@ function MoreSection() {
             <p className="text-[#745f3e] text-sm">
               Empower students with MeaVana.
             </p>
+
             <img
               src={mvschools}
               alt="meavana plus"
