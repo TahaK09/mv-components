@@ -6,6 +6,7 @@ import FeaturesSection from "../components/featuresSection.jsx";
 import MoreSection from "../components/moreSection.jsx";
 import AnimationFeatureCard1 from "../components/animationFeatureCard1.jsx";
 import AnimationFeatureCard2 from "../components/animationFeatureCard2.jsx";
+import Features from "../components/features.jsx";
 
 const testimonials = [
   {
@@ -154,8 +155,7 @@ function Home() {
   return (
     <>
       <HeroSection />
-      <AnimationFeatureCard1 />
-      <AnimationFeatureCard2 />
+      <Features />
 
       {/* <Testimonials
         testimonials={testimonials}
