@@ -5,6 +5,7 @@ function Features() {
   const imgRef = useRef(null);
   const [topPos, setTopPos] = useState(0);
   const [btnColor, setBtnColor] = useState("bg-gray-500");
+  const [position, setPosition] = useState("");
 
   useEffect(() => {
     function updatePosition() {
@@ -35,6 +36,15 @@ function Features() {
     }
   }, [topPos]);
 
+  useEffect(() => {
+    if (topPos > 1232) {
+      //This value is temporary - It is the point where the button should become fixed; Will vary based on vertical window size (and after w-screen it will change to fixed otherwise relative)
+      setPosition("fixed");
+    } else {
+      setPosition("relative");
+    }
+  }, [topPos]);
+
   return (
     <>
       <div className="w-screen h-[200vh] flex flex-col items-center justify-center bg-gradient-to-b from-blue-100 to-white">
@@ -49,10 +59,11 @@ function Features() {
 
         <div className="w-1 border-r border-dashed left-1/2 border-gray-400 h-1/2"></div>
       </div>
-      <div className="fixed top-40 left-[48.5%] pointer-events-none">
+
+      <div className={`${position} top-40 left-[48.5%] pointer-events-none`}>
         <img
           ref={imgRef}
-          className="w-14 h-14 rounded-full"
+          className={`w-14 h-14 rounded-full`}
           src={Contact}
           alt="contact"
         />

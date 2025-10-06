@@ -9,6 +9,7 @@ import Blogs from "./Blogs/index.jsx";
 import Careers from "./components/careers.jsx";
 import About from "./About/index.jsx";
 import School from "./Schools/index.jsx";
+import WaveSection from "./components/waveSection.jsx";
 import AnimationFeatureCard2 from "./components/animationFeatureCard2.jsx";
 
 function App() {
@@ -24,6 +25,7 @@ function App() {
           <Route path="/careers" element={<Careers />} />
           <Route path="/about" element={<About />} />
           <Route path="/meavana-schools" element={<School />} />
+          <Route path="/wave" element={<WaveSection />} />
           <Route
             path="/featuredAnimation"
             element={<AnimationFeatureCard2 />}
