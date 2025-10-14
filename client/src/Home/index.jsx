@@ -156,7 +156,6 @@ function Home() {
     <>
       <HeroSection />
       <Features />
-
       {/* <Testimonials
         testimonials={testimonials}
         header={"What the community is saying"}

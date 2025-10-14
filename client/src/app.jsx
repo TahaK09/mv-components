@@ -11,28 +11,32 @@ import About from "./About/index.jsx";
 import School from "./Schools/index.jsx";
 import WaveSection from "./components/waveSection.jsx";
 import AnimationFeatureCard2 from "./components/animationFeatureCard2.jsx";
+import GetExtenBtn from "./components/getExtenBtn.jsx";
 
 function App() {
   return (
     <>
-      <Navbar />
-      <div className="flex flex-col items-center justify-center h-auto">
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/faqs" element={<Faqs />} />
-          <Route path="/blogs" element={<Blogs />} />
-          <Route path="/careers" element={<Careers />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/meavana-schools" element={<School />} />
-          <Route path="/wave" element={<WaveSection />} />
-          <Route
-            path="/featuredAnimation"
-            element={<AnimationFeatureCard2 />}
-          />
-        </Routes>
+      <div className="flex flex-col justify-center items-center ">
+        <Navbar />
+        <div className="flex flex-col items-center justify-center h-auto">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/faqs" element={<Faqs />} />
+            <Route path="/blogs" element={<Blogs />} />
+            <Route path="/careers" element={<Careers />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/meavana-schools" element={<School />} />
+            <Route path="/wave" element={<WaveSection />} />
+            <Route
+              path="/featuredAnimation"
+              element={<AnimationFeatureCard2 />}
+            />
+          </Routes>
+        </div>
+        <GetExtenBtn />
+        <Footer />
       </div>
-      <Footer />
     </>
   );
 }

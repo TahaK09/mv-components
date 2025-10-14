@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useAppContext } from "../Context/AppContext.jsx";
 
 function GetExtenBtn() {
-  const [browser, setBrowser] = useState(6); // Default to "Unknown Browser"
+  const [browser, setBrowser] = useState(6);
   const [spin, setSpin] = useState(false);
   const { path } = useAppContext();
   const [colorHeaderText, setColorHeaderText] = useState("text-blue-800");
@@ -11,7 +11,7 @@ function GetExtenBtn() {
     if (path === "/meavana-schools") {
       setColorHeaderText("text-white");
     } else {
-      setColorHeaderText("text-blue-800");
+      setColorHeaderText("text-white");
     }
   }, [path]);
 
@@ -59,22 +59,22 @@ function GetExtenBtn() {
   };
 
   return (
-    <a
-      href="https://chromewebstore.google.com/detail/meavana-productivity-moti/kgbcoelgfffkmkpfnldemdinmcbpjlaa"
-      target="_blank"
-      className="flex flex-row justify-center items-center w-auto px-6 py-2 border border-[#380c9c] rounded-lg text-md gap-3"
-    >
+    <div className="fixed bottom-5 flex flex-row justify-center items-center w-auto px-6 py-2 border bg-gray-800 border-[#380c9c] rounded-lg text-md gap-3">
       <img
         src={browserIcons[browser]}
         alt={browserNames[browser].icon}
         className={`w-7 h-7 ${spin ? "animate-spin-once" : ""}`}
       />
-      <div className={`${colorHeaderText}`}>
+      <div className={`text-white`}>Try MeaVana For Free</div>
+      <div className={`text-gray-500`}>|</div>
+      <a
+        href="https://chromewebstore.google.com/detail/meavana-productivity-moti/kgbcoelgfffkmkpfnldemdinmcbpjlaa"
+        target="_blank"
+        className={`rounded-sm bg-violet-500 text-white text-sm px-3 py-1`}
+      >
         Get {browserNames[browser].name} Extension
-      </div>
-      <div className={`${colorHeaderText}`}>|</div>
-      <div className={`${colorHeaderText}`}>It's free</div>
-    </a>
+      </a>
+    </div>
   );
 }
 

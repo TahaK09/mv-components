@@ -7,7 +7,8 @@ function Features() {
   const [btnColor, setBtnColor] = useState("bg-gray-500");
   const [position, setPosition] = useState();
   const [relativePos, setRelativePos] = useState(0);
-  const [heightDashed, setHeightDashed] = useState(400);
+  const fixedHeight = 900;
+  const [heightDashed, setHeightDashed] = useState(fixedHeight);
 
   useEffect(() => {
     const updatePosition = () => {
@@ -37,14 +38,9 @@ function Features() {
     setBtnColor(heightDashed == 0 ? "bg-violet-500" : "bg-gray-500");
   }, [topPos]);
 
-  // Update position mode
-  useEffect(() => {
-    setPosition(topPos > 1200 ? "fixed" : "relative");
-  }, [topPos]);
-
   // Adjust dashed line height
   useEffect(() => {
-    setHeightDashed(400 - relativePos);
+    setHeightDashed(fixedHeight - relativePos);
   }, [relativePos]);
 
   return (

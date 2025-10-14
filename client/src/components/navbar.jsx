@@ -1,7 +1,6 @@
 import React, { useRef, useState, useEffect } from "react";
 import MVlogo from "../assets/meavana.svg";
 import { useAppContext } from "../Context/AppContext";
-import GetExtenBtn from "./getExtenBtn.jsx";
 import { NavLink } from "react-router-dom";
 
 const Navbar = () => {
@@ -60,9 +59,6 @@ const Navbar = () => {
           </div>
         ))}
       </nav>
-      <div className="flex items-center space-x-4">
-        <GetExtenBtn />
-      </div>
     </header>
   );
 };
