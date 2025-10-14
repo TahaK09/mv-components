@@ -5,73 +5,78 @@ function Features() {
   const imgRef = useRef(null);
   const [topPos, setTopPos] = useState(0);
   const [btnColor, setBtnColor] = useState("bg-gray-500");
-  const [position, setPosition] = useState("");
+  const [position, setPosition] = useState();
+  const [relativePos, setRelativePos] = useState(0);
+  const [heightDashed, setHeightDashed] = useState(400);
 
   useEffect(() => {
-    function updatePosition() {
+    const updatePosition = () => {
       if (imgRef.current) {
         const rect = imgRef.current.getBoundingClientRect();
-        setTopPos(rect.top + window.scrollY);
-        // rect.top = relative to viewport
-        // + window.scrollY = relative to document top
+        const absoluteTop = rect.top + window.scrollY;
+        setTopPos(absoluteTop);
+        if (absoluteTop - window.innerHeight < heightDashed) {
+          setRelativePos(absoluteTop - window.innerHeight);
+        } else {
+          setRelativePos(heightDashed);
+        }
       }
-    }
-    //This is very important use of useRef
-    //Very important to add event listeners and clean them up - It is done so that the event listeners are not added multiple times on every render
-    updatePosition(); // run once on mount
+    };
+
+    updatePosition();
     window.addEventListener("scroll", updatePosition);
     window.addEventListener("resize", updatePosition);
-
     return () => {
       window.removeEventListener("scroll", updatePosition);
       window.removeEventListener("resize", updatePosition);
     };
   }, []);
 
+  // Update button color
   useEffect(() => {
-    if (topPos > 2121) {
-      setBtnColor("bg-violet-500");
-    } else {
-      setBtnColor("bg-gray-500");
-    }
+    setBtnColor(heightDashed == 0 ? "bg-violet-500" : "bg-gray-500");
   }, [topPos]);
 
+  // Update position mode
   useEffect(() => {
-    if (topPos > 1232) {
-      //This value is temporary - It is the point where the button should become fixed; Will vary based on vertical window size (and after w-screen it will change to fixed otherwise relative)
-      setPosition("fixed");
-    } else {
-      setPosition("relative");
-    }
+    setPosition(topPos > 1200 ? "fixed" : "relative");
   }, [topPos]);
+
+  // Adjust dashed line height
+  useEffect(() => {
+    setHeightDashed(400 - relativePos);
+  }, [relativePos]);
 
   return (
     <>
-      <div className="w-screen h-[200vh] flex flex-col items-center justify-center bg-gradient-to-b from-blue-100 to-white">
-        <div className="w-1 border-r-4 left-1/2 border-violet-600 h-1/2"></div>
-        <div className="left-1/2 z-1000 p-2 bg-blurred-200 rounded-lg border border-gray-200">
+      <div className="w-screen flex flex-col items-center justify-center bg-gradient-to-b from-blue-100 to-white">
+        <div
+          className="w-1 border-r-4 left-1/2 border-violet-600"
+          style={{ height: `${relativePos}px` }}
+        />
+        <div
+          className="w-0.25 border-r left-1/2 border-dashed border-gray-600"
+          style={{ height: `${heightDashed}px` }}
+        />
+        <div className="left-1/2 z-50 p-2 bg-white/60 backdrop-blur-md rounded-lg border border-gray-200">
           <button
-            className={`w-40 h-10  ${btnColor} text-white rounded-lg transition-colors duration-300`}
+            className={`w-40 h-10 ${btnColor} text-white rounded-lg transition-colors duration-300`}
           >
-            Button
+            {btnColor === "bg-violet-500" ? "Active " : "Inactive "}
           </button>
         </div>
-
-        <div className="w-1 border-r border-dashed left-1/2 border-gray-400 h-1/2"></div>
       </div>
 
-      <div className={`${position} top-40 left-[48.5%] pointer-events-none`}>
+      <div
+        className={`fixed top-40 left-[48.5%] pointer-events-none transition-opacity duration-700`}
+      >
         <img
           ref={imgRef}
-          className={`w-14 h-14 rounded-full`}
+          className="w-14 h-14 rounded-full"
           src={Contact}
           alt="contact"
         />
       </div>
-
-      <p className="fixed bottom-10 left-10 bg-white p-2 rounded shadow">
-        Image top (document): {topPos}px
-      </p>
     </>
   );
 }
